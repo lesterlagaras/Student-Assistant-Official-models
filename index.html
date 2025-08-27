@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A.S.T.R.A Chat</title>
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Main JS -->
+<script src="main.js" defer></script>
+
+<!-- Mobile-specific CSS -->
+<link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
+</head>
+<body>
+
+<!-- Options button -->
+<button id="option-btn" class="option-btn">⚙️ Options</button>
+
+<!-- Options Menu -->
+<div id="option-menu" class="option-menu">
+  <button id="dark-toggle" class="option-btn-item">🌙 Dark Mode</button>
+  <button id="notes-btn" class="option-btn-item">📒 Notes</button>
+  <button id="calendar-btn" class="option-btn-item">📅 Calendar</button>
+  <button id="view-events-btn" class="option-btn-item">📋 View All Events</button>
+</div>
+
+<!-- Notes Panel -->
+<div id="notes-panel" class="panel notes-panel">
+  <div class="panel-header">
+    <h4>📒 Notes</h4>
+    <div class="panel-controls">
+      <button id="fullscreen-notes" class="panel-btn" title="Fullscreen">⛶</button>
+      <button id="close-notes" class="panel-btn">❌</button>
+    </div>
+  </div>
+  <textarea id="notes-input" class="panel-textarea"></textarea>
+  <div class="panel-footer">
+    <button id="back-notes" class="panel-btn">⬅️ Back</button>
+    <button id="save-notes" class="panel-btn save-btn">💾 Save</button>
+    <button id="next-notes" class="panel-btn">Next ➡️</button>
+  </div>
+</div>
+
+<!-- Calendar Panel -->
+<div id="calendar-panel" class="panel calendar-panel">
+  <div class="panel-header">
+    <h4>📅 Calendar</h4>
+    <button id="close-calendar" class="panel-btn">❌</button>
+  </div>
+  <div class="calendar-nav">
+    <button id="prev-month" class="panel-btn">⬅️</button>
+    <span id="month-year"></span>
+    <button id="next-month" class="panel-btn">➡️</button>
+  </div>
+  <div id="calendar-grid" class="calendar-grid"></div>
+  <input type="text" id="event-text" class="panel-input" placeholder="Event description">
+  <button id="add-calendar-event" class="panel-btn">➕ Add Event</button>
+</div>
+
+<!-- All Events Panel -->
+<div id="all-events-panel" class="panel all-events-panel">
+  <div class="panel-header">
+    <h4>📋 All Events</h4>
+    <button id="close-events" class="panel-btn">❌</button>
+  </div>
+  <div id="events-list" class="events-list"></div>
+</div>
+
+<!-- Chat Container -->
+<div id="chat-container">
+  <div id="welcome-message">Hi there! How’s your day going? How can I assist you today?</div>
+  <div id="conversation"></div>
+</div>
+
+<!-- Input Bar -->
+<div id="input-bar">
+  <textarea id="user-input" placeholder="Type your question..." inputmode="text" enterkeyhint="newline"></textarea>
+  <button id="send-btn">Send</button>
+</div>
+
+</body>
+</html>
