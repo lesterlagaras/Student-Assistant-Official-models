@@ -5,26 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A.S.T.R.A Chat</title>
 
+<!-- Mobile redirect script -->
+<script>
+  // Detect mobile devices
+  if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      window.location.href = "index-mobile.html";
+  }
+</script>
+
 <!-- Main CSS -->
 <link rel="stylesheet" href="style.css">
 
 <!-- Main JS -->
 <script src="main.js" defer></script>
-
-<!-- Mobile-specific CSS -->
-<link rel="stylesheet" href="mobile.css" media="screen and (max-width: 768px)">
 </head>
 <body>
 
 <!-- Options button -->
-<button id="option-btn" class="option-btn">⚙️ Options</button>
+<button id="option-btn" class="option-btn" aria-label="Options">⚙️ Options</button>
 
 <!-- Options Menu -->
 <div id="option-menu" class="option-menu">
-  <button id="dark-toggle" class="option-btn-item">🌙 Dark Mode</button>
-  <button id="notes-btn" class="option-btn-item">📒 Notes</button>
-  <button id="calendar-btn" class="option-btn-item">📅 Calendar</button>
-  <button id="view-events-btn" class="option-btn-item">📋 View All Events</button>
+  <button id="dark-toggle" class="option-btn-item" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
+  <button id="notes-btn" class="option-btn-item" aria-label="Open Notes">📒 Notes</button>
+  <button id="calendar-btn" class="option-btn-item" aria-label="Open Calendar">📅 Calendar</button>
+  <button id="view-events-btn" class="option-btn-item" aria-label="View All Events">📋 View All Events</button>
 </div>
 
 <!-- Notes Panel -->
@@ -33,10 +38,10 @@
     <h4>📒 Notes</h4>
     <div class="panel-controls">
       <button id="fullscreen-notes" class="panel-btn" title="Fullscreen">⛶</button>
-      <button id="close-notes" class="panel-btn">❌</button>
+      <button id="close-notes" class="panel-btn" aria-label="Close Notes">❌</button>
     </div>
   </div>
-  <textarea id="notes-input" class="panel-textarea"></textarea>
+  <textarea id="notes-input" class="panel-textarea" placeholder="Type your notes here..."></textarea>
   <div class="panel-footer">
     <button id="back-notes" class="panel-btn">⬅️ Back</button>
     <button id="save-notes" class="panel-btn save-btn">💾 Save</button>
@@ -48,7 +53,7 @@
 <div id="calendar-panel" class="panel calendar-panel">
   <div class="panel-header">
     <h4>📅 Calendar</h4>
-    <button id="close-calendar" class="panel-btn">❌</button>
+    <button id="close-calendar" class="panel-btn" aria-label="Close Calendar">❌</button>
   </div>
   <div class="calendar-nav">
     <button id="prev-month" class="panel-btn">⬅️</button>
@@ -64,7 +69,7 @@
 <div id="all-events-panel" class="panel all-events-panel">
   <div class="panel-header">
     <h4>📋 All Events</h4>
-    <button id="close-events" class="panel-btn">❌</button>
+    <button id="close-events" class="panel-btn" aria-label="Close All Events">❌</button>
   </div>
   <div id="events-list" class="events-list"></div>
 </div>
