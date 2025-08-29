@@ -423,3 +423,41 @@ body.dark-mode #send-btn:hover {
   .calendar-panel { width: 90%; height: 400px; }
   .all-events-panel { width: 90%; max-height: 400px; }
 }
+
+/* ================= Calculator panel ================= */
+#calculator-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 360px;
+  max-height: 90vh; /* full viewport height */
+  background-color: #fff;
+  color: #000;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+/* Make input fixed at top, buttons scrollable */
+#calc-input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+/* Button grid scrollable */
+#calc-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  overflow-y: auto; /* allow scroll if needed */
+  flex-grow: 1;
+}

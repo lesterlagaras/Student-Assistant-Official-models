@@ -417,3 +417,53 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial render
   renderCalendar();
 });
+
+// ================= Calculator =================
+const calculatorBtn = document.getElementById('calculator-btn');
+const calculatorPanel = document.getElementById('calculator-panel');
+const calculatorInput = document.getElementById('calculator-input');
+const closeCalculator = document.getElementById('close-calculator');
+let calcExpression = '';
+
+if(calculatorBtn && calculatorPanel && calculatorInput){
+  const calcButtons = document.querySelectorAll('.calc-btn');
+
+  // Toggle calculator panel
+  calculatorBtn.addEventListener('click', () => {
+    calculatorPanel.style.display = calculatorPanel.style.display === 'flex' ? 'none' : 'flex';
+    if(typeof notesPanel !== 'undefined') notesPanel.style.display = 'none';
+    if(typeof calendarPanel !== 'undefined') calendarPanel.style.display = 'none';
+    if(typeof allEventsPanel !== 'undefined') allEventsPanel.style.display = 'none';
+    if(typeof optionMenu !== 'undefined') optionMenu.style.display = 'none';
+  });
+
+  // Close button
+  closeCalculator.addEventListener('click', () => calculatorPanel.style.display = 'none');
+
+  // Calculator button listeners
+  calcButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const val = btn.dataset.value;
+
+      if(val === 'C'){
+        calcExpression = '';
+        calculatorInput.value = '0';
+      } else if(val === '='){
+    try{
+        // Palitan ang symbols para ma-eval nang tama
+        calcExpression = eval(calcExpression.replace(/÷/g, '/').replace(/×/g, '*')).toString();
+        calculatorInput.value = calcExpression;
+    } catch {
+        calculatorInput.value = 'Error';
+        calcExpression = '';
+    }
+} else if(val === 'back'){  // <- dito yung backspace
+    calcExpression = calcExpression.slice(0, -1);
+    calculatorInput.value = calcExpression || '0';
+} else {
+    calcExpression += val;
+    calculatorInput.value = calcExpression;
+}
+    });
+  });
+}

@@ -7,16 +7,12 @@
 
 <!-- Mobile redirect script -->
 <script>
-  // Detect mobile devices
   if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
       window.location.href = "index-mobile.html";
   }
 </script>
 
-<!-- Main CSS -->
 <link rel="stylesheet" href="style.css">
-
-<!-- Main JS -->
 <script src="main.js" defer></script>
 </head>
 <body>
@@ -30,6 +26,7 @@
   <button id="notes-btn" class="option-btn-item" aria-label="Open Notes">📒 Notes</button>
   <button id="calendar-btn" class="option-btn-item" aria-label="Open Calendar">📅 Calendar</button>
   <button id="view-events-btn" class="option-btn-item" aria-label="View All Events">📋 View All Events</button>
+  <button id="calculator-btn" class="option-btn-item" aria-label="Open Calculator">🧮 Calculator</button>
 </div>
 
 <!-- Notes Panel -->
@@ -72,6 +69,39 @@
     <button id="close-events" class="panel-btn" aria-label="Close All Events">❌</button>
   </div>
   <div id="events-list" class="events-list"></div>
+</div>
+
+<!-- Calculator Panel -->
+<div id="calculator-panel" class="panel calculator-panel">
+  <div class="panel-header">
+    <h4>🧮 Calculator</h4>
+    <button id="close-calculator" class="panel-btn" aria-label="Close Calculator">❌</button>
+  </div>
+  <input type="text" id="calculator-input" class="panel-input" placeholder="0" readonly>
+  <div id="calc-buttons" class="calc-buttons">
+    <button class="panel-btn calc-btn" data-value="7">7</button>
+    <button class="panel-btn calc-btn" data-value="8">8</button>
+    <button class="panel-btn calc-btn" data-value="9">9</button>
+    <button class="panel-btn calc-btn" data-value="/">÷</button>
+
+    <button class="panel-btn calc-btn" data-value="4">4</button>
+    <button class="panel-btn calc-btn" data-value="5">5</button>
+    <button class="panel-btn calc-btn" data-value="6">6</button>
+    <button class="panel-btn calc-btn" data-value="*">×</button>
+
+    <button class="panel-btn calc-btn" data-value="1">1</button>
+    <button class="panel-btn calc-btn" data-value="2">2</button>
+    <button class="panel-btn calc-btn" data-value="3">3</button>
+    <button class="panel-btn calc-btn" data-value="-">−</button>
+
+    <button class="panel-btn calc-btn" data-value="0">0</button>
+    <button class="panel-btn calc-btn" data-value=".">.</button>
+    <button class="panel-btn calc-btn" data-value="=">=</button>
+    <button class="panel-btn calc-btn" data-value="+">+</button>
+
+    <button class="panel-btn calc-btn" data-value="C">C</button>
+    <button class="panel-btn calc-btn" data-value="back">⌫</button>
+  </div>
 </div>
 
 <!-- Chat Container -->
