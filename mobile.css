@@ -266,23 +266,147 @@ body.dark-mode {
   color: #e0e0e0;
 }
 
-body.dark-mode #chat-container { background: #121212; }
-body.dark-mode #conversation .user { background-color: #1a1a1a; color: #fff; }
-body.dark-mode #conversation .bot { background-color: #2c2c2e; color: #fff; }
-body.dark-mode #input-bar { background: #1e1e1e; border: 1px solid #333; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
-body.dark-mode #user-input { background: #2c2c2e; color: #fff; }
-body.dark-mode #welcome-message { background-color: #2c2c2c; color: #fff !important; }
-body.dark-mode .option-menu { background: #1e1e1e; border: 1px solid #333; color: #fff; }
-body.dark-mode .option-btn-item { background: #fff; color: #000; }
-body.dark-mode .option-btn-item:hover { background: #bbecf0; }
-body.dark-mode .panel { background: #1e1e1e; border: 1px solid #333; }
-body.dark-mode .panel-textarea { background: #2c2c2e; color: #fff; border: 1px solid #444; }
-body.dark-mode .save-btn { background: #000; }
-body.dark-mode .save-btn:hover { background: #000; }
-body.dark-mode .events-list .event-item { background: #3a3a3a; border: 1px solid #555; color: #fff; }
+body.dark-mode #chat-container {
+  background: #121212;
+}
+
+body.dark-mode #conversation .user {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode #conversation .bot {
+  background-color: #2c2c2e;
+  color: #fff;
+}
+
+body.dark-mode #input-bar {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+body.dark-mode #user-input {
+  background: #2c2c2e;
+  color: #fff;
+}
+
+body.dark-mode #welcome-message {
+  background-color: #2c2c2c;
+  color: #fff !important;
+}
+
+body.dark-mode .option-menu {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+body.dark-mode .panel {
+  background: #1e1e1e;
+  border: 1px solid #333;
+}
+
+body.dark-mode .panel-textarea {
+  background: #2c2c2e;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+body.dark-mode .events-list .event-item {
+  background: #3a3a3a;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+/* ================= Buttons (Light Mode) ================= */
+button,
+.option-btn-item,
+.panel-btn,
+.save-btn,
+#send-btn {
+  background-color: #d3d3d3; /* grey background */
+  color: #000;               /* dark text */
+  border: none;
+  border-radius: 12px;       /* mobile-friendly */
+  padding: 6px 12px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.2s;
+  background-image: linear-gradient(145deg, #e0e0e0, #c8c8c8);
+}
+
+button:hover,
+.option-btn-item:hover,
+.panel-btn:hover,
+.save-btn:hover,
+#send-btn:hover {
+  background-image: linear-gradient(145deg, #c8c8c8, #e0e0e0);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transform: translateY(-1px);
+}
+
+/* ================= Buttons in Dark Mode ================= */
+body.dark-mode button,
+body.dark-mode .option-btn-item,
+body.dark-mode .panel-btn,
+body.dark-mode .save-btn,
+body.dark-mode #send-btn {
+  background-color: #ffffff; /* white background */
+  color: #000;               /* dark text */
+  border-radius: 12px;
+  padding: 6px 12px;
+  background-image: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+}
+
+body.dark-mode button:hover,
+body.dark-mode .option-btn-item:hover,
+body.dark-mode .panel-btn:hover,
+body.dark-mode .save-btn:hover,
+body.dark-mode #send-btn:hover {
+  background-image: linear-gradient(145deg, #e0e0e0, #f0f0f0);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transform: translateY(-1px);
+}
 
 /* ================= Buttons Hover ================= */
 button:hover { opacity: 0.9; transition: 0.2s; }
+
+#send-btn {
+  background-color: #d3d3d3; 
+  color: #000;
+  border: none;
+  border-radius: 18px;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); 
+  background-image: linear-gradient(145deg, #e0e0e0, #c8c8c8); 
+}
+
+#send-btn:hover {
+  background-image: linear-gradient(145deg, #c8c8c8, #e0e0e0);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transform: translateY(-1px);
+}
+
+/* ================= Dark Mode ================= */
+body.dark-mode #send-btn {
+  background-color: #ffffff; 
+  color: #000; 
+  background-image: linear-gradient(145deg, #f0f0f0, #e0e0e0); 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+body.dark-mode #send-btn:hover {
+  background-image: linear-gradient(145deg, #e0e0e0, #f0f0f0);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transform: translateY(-1px);
+}
 
 /* ================= Mobile Adjustments ================= */
 @media (max-width: 768px) {

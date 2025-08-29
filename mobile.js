@@ -99,68 +99,14 @@ if(savedMode === 'dark'){
 } else {
   document.body.classList.remove('dark-mode');
 }
-setDarkMode(document.body.classList.contains('dark-mode'));
+
+darkToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
 
 darkToggle.addEventListener('click', () => {
   const isDark = document.body.classList.toggle('dark-mode');
   localStorage.setItem('chatMode', isDark ? 'dark' : 'light');
-  setDarkMode(isDark);
-});
-
-function setDarkMode(isDark) {
   darkToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-
-  // Panels
-  [notesPanel, calendarPanel, allEventsPanel].forEach(panel => {
-    panel.style.backgroundColor = isDark ? '#1e1e1e' : '#fff';
-    panel.style.color = isDark ? '#ffffff' : '#000000';
-    panel.style.border = isDark ? '1px solid #555' : '1px solid #ccc';
-  });
-
-  // Buttons
-  const buttons = document.querySelectorAll('#option-menu button, .panel-btn, #send-btn, #add-calendar-event');
-  buttons.forEach(btn => {
-    btn.style.backgroundColor = isDark ? '#ffffff' : '#d3d3d3';
-    btn.style.color = '#000000';
-    btn.style.border = 'none';
-    btn.style.borderRadius = '6px';
-    btn.style.padding = '4px 8px';
-    btn.style.cursor = 'pointer';
-    btn.style.margin = '2px';
-  });
-
-  // Chat messages
-const chatDivs = document.querySelectorAll('#conversation div');
-chatDivs.forEach(msg => {
-  if(msg.classList.contains('user')){
-    // User bubble: Light grey in light mode, white/light in dark mode
-    msg.style.backgroundColor = isDark ? '#ffffff' : '#e0e0e0';
-    msg.style.color = '#000000';
-    msg.style.alignSelf = 'flex-end'; // user messages on right
-    msg.style.textAlign = 'right';
-  } else if(msg.classList.contains('bot')){
-    // Bot bubble: White in light mode, dark grey in dark mode
-    msg.style.backgroundColor = isDark ? '#2c2c2e' : '#ffffff';
-    msg.style.color = isDark ? '#ffffff' : '#000000';
-    msg.style.alignSelf = 'flex-start'; // bot messages on left
-    msg.style.textAlign = 'left';
-  }
 });
-
-  // Welcome message
-  if(welcomeMsg){
-    welcomeMsg.style.color = isDark ? '#ffffff' : '#888';
-  }
-
-  // Input bar
-  const inputBar = document.getElementById('input-bar');
-  inputBar.style.backgroundColor = isDark ? '#1e1e1e' : '#fff';
-  inputBar.style.border = isDark ? '1px solid #333' : 'none';
-  inputBar.style.boxShadow = isDark ? '0 4px 12px rgba(0,0,0,0.4)' : '0 2px 8px rgba(0,0,0,0.1)';
-
-  // Textarea color
-  textarea.style.color = isDark ? '#ffffff' : '#000000';
-}
 
 // ================= Message Handling =================
 function addMessage(msg, sender = 'user') {
